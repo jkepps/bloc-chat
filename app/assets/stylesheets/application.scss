@@ -34,7 +34,6 @@ body {
 	color: #000;
 	min-height: 100%;
 	padding-left: chat-room-list-width;
-	background-color: blue;
 	margin: 0;
 }
 
@@ -42,7 +41,14 @@ body {
 	position: absolute;
 	height: 100%;
 	border-right: 2px solid #000;
-	background-color: red;
 	left: 0;
 	width: $chat-room-list-width;
+	background-color: #242424;
+	color: #f4f4f4;
+	padding: 10px;
+	overflow: scroll;
+}
+
+.chat-list-container h2 {
+	
 }
