@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe ChatRoom, type: :model do
 	let(:chat_room) { create(:chat_room) }
 
+	it { should have_many(:messages)}
+
 	# shoulda tests for name
 	it { should validate_presence_of(:name) }
 	it { should validate_uniqueness_of(:name) }

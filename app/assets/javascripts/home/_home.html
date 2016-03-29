@@ -1,6 +1,9 @@
 <div class="chat-list-container">
 	<div class="chat-room-list">
-		<h2>Bloc Chat</h2>
-		<div class="chat-room-list-item">{{ main.test }}</div>
+		<h1>Bloc Chat</h1>
+		<div ng-repeat="room in main.rooms" class="chat-room-list-item">
+			<h5># {{ room.name }}</h5>
+			<!-- <small>Created By: {{ room.created_by }}</small> -->
+		</div>
 	</div>
 </div>

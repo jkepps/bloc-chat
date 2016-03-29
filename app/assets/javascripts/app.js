@@ -10,7 +10,15 @@
 			.state('home', {
 				url: '/',
 				controller: 'MainCtrl as main',
-				templateUrl: 'home/_home.html'
+				templateUrl: 'home/_home.html',
+				resolve: {
+					roomPromise: ['Rooms', function(rooms) {
+						return rooms.getAll();
+					}]
+					// room: ['$stateParams', 'Rooms', function($stateParams, room) {
+					// 	return room.get($stateParams.id);
+					// }]
+				}
 		});
 			
 		$urlRouterProvider.otherwise('/');

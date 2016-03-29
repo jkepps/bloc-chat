@@ -17,6 +17,8 @@
  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300);
 
  $chat-room-list-width: 20%;
+ $text-color: #f4f4f4;
+ $background-color: #242424;
 
 *, *:before, *:after {
 	-moz-box-sizing: border-box;
@@ -26,7 +28,7 @@
 
 html {
 	height: 100%;
-	font-size: 100%;
+	font-size: 10px;
 }
 
 body {
@@ -40,15 +42,44 @@ body {
 .chat-list-container {
 	position: absolute;
 	height: 100%;
-	border-right: 2px solid #000;
+	/*border-right: 2px solid #000;*/
 	left: 0;
 	width: $chat-room-list-width;
 	background-color: #242424;
 	color: #f4f4f4;
-	padding: 10px;
 	overflow: scroll;
 }
 
-.chat-list-container h2 {
-	
+.chat-list-container .chat-room-list h1 {
+	padding-left: 20px;
+	margin: 40px 0;
+	font-size: 3rem;
+	font-weight: 400;
+}
+
+.chat-list-container .chat-room-list .chat-room-list-item {
+	border-top: 1px solid white;
+	padding: 20px 20px;
+	margin: 0;
+}
+
+.chat-list-container .chat-room-list .chat-room-list-item:hover {
+	background-color: $text-color;
+	color: $background-color;
+	cursor: pointer;
+}
+
+.chat-list-container .chat-room-list .chat-room-list-item h5 {
+	font-size: 1.4rem;
+	padding: 0;
+	margin: 0;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 1.5em;
+}
+
+.chat-list-container .chat-room-list .chat-room-list-item small {
+	font-size: 1rem;
+	font-weight: 300;
+	letter-spacing: 1px;
 }
