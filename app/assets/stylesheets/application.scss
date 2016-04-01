@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap
+ *= require ionicons
  *= require_tree .
  *= require_self
  */
@@ -39,6 +40,7 @@ body {
 	padding-left: chat-room-list-width;
 	margin: 0;
 }
+
 
 .chat-list-container {
 	position: absolute;
@@ -83,4 +85,8 @@ body {
 	font-size: 1rem;
 	font-weight: 300;
 	letter-spacing: 1px;
+}
+
+.chat-list-container .chat-room-list .chat-room-list-item .icon.ion-ios-plus-outline {
+	font-size: 1.75rem;
 }

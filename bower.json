@@ -20,6 +20,7 @@
     "angular-ui-router": "^0.2.18",
     "angular-bootstrap": "^1.2.5",
     "bootstrap": "^3.3.6",
-    "angular-animate": "^1.5.3"
+    "angular-animate": "^1.5.3",
+    "Ionicons": "ionicons#^2.0.1"
   }
 }

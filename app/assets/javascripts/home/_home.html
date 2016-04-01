@@ -1,12 +1,13 @@
 <div class="chat-list-container">
 	<div class="chat-room-list">
-		<h1>Bloc Chat</h1>
-		<div class="modal-button-container" ng-controller="ModalCtrl as modal">
-			<button type="button" class="btn btn-default" ng-click="modal.open()">Create</button>
+		<h1><i class="icon ion-chatboxes"></i> Bloc Chat</h1>
+		<div ng-repeat="room in main.rooms" 
+				class="chat-room-list-item"
+				ng-click="#">
+			<h5><i class="icon ion-pound"></i> {{ room.name }}</h5>
 		</div>
-		<div ng-repeat="room in main.rooms" class="chat-room-list-item">
-			<h5># {{ room.name }}</h5>
-			<!-- <small>Created By: {{ room.created_by }}</small> -->
-		</div>
+		<div class="chat-room-list-item"
+				ng-controller="ModalCtrl as modal"
+				ng-click="modal.open()"><i class="icon ion-plus-round"></i> New Chat Room</div>
 	</div>
 </div>
