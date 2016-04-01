@@ -26,6 +26,6 @@
 
 
 	angular
-		.module('blocChat', ['ui.router', 'templates'])
+		.module('blocChat', ['ui.router', 'templates', 'ngAnimate', 'ui.bootstrap'])
 		.config(config);
 })();

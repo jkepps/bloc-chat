@@ -1,0 +1,31 @@
+<div class="modal-header">
+	<h3 class="modal-title">New Chat Room</h3>
+</div>
+<div class="modal-body">
+	<form>
+
+		<div class="form-group">
+			<input type="text"
+						class="form-control"
+						placeholder="Name"
+						ng-model="name"></input>
+		</div>
+
+		<div class="form-group">
+			<input type="text"
+						class="form-control"
+						placeholder="Created By"
+						ng-model="user"></input>
+		</div>
+	</form>
+	<p>Name: {{ name }}</p>
+	<p>Created By: {{ user }}</p>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" 
+					type="submit" 
+					ng-click="modalInst.ok()">Create</button>
+	<button class="btn btn-warning"
+					type="button"
+					ng-click="modalInst.cancel()">Cancel</button>
+</div>

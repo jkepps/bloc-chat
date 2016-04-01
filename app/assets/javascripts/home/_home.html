@@ -1,6 +1,9 @@
 <div class="chat-list-container">
 	<div class="chat-room-list">
 		<h1>Bloc Chat</h1>
+		<div class="modal-button-container" ng-controller="ModalCtrl as modal">
+			<button type="button" class="btn btn-default" ng-click="modal.open()">Create</button>
+		</div>
 		<div ng-repeat="room in main.rooms" class="chat-room-list-item">
 			<h5># {{ room.name }}</h5>
 			<!-- <small>Created By: {{ room.created_by }}</small> -->
