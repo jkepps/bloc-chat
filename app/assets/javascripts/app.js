@@ -15,11 +15,18 @@
 					roomPromise: ['Rooms', function(rooms) {
 						return rooms.getAll();
 					}]
-					// room: ['$stateParams', 'Rooms', function($stateParams, room) {
-					// 	return room.get($stateParams.id);
-					// }]
 				}
-		});
+			})
+			.state('rooms', {
+				url: '/chat-rooms/{id}',
+				controller: 'RoomsCtrl as rooms',
+				templateUrl: 'chat-rooms/_rooms.html',
+				resolve: {
+					room: ['$stateParams', 'Rooms', function($stateParams, rooms) {
+						return rooms.get($stateParams.id);
+					}]
+				}
+			});
 			
 		$urlRouterProvider.otherwise('/');
 	}

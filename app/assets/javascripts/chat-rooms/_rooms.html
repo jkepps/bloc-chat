@@ -1,0 +1,12 @@
+<div class="messages-container">
+	<h1><i class="icon ion-pound"></i> {{ rooms.room.name }}</h1>
+	<div class="message-list" ng-show="hasMessages()">
+		<div ng-repeat="message in rooms.room.messages"
+				class="message">
+			<small>{{ message.created_at | date:'short'}}</small>
+			<p class="message-author">{{ message.author }}</p>
+			<p class="message-body">{{ message.body }}</p>
+		</div>
+	</div>
+	<div ng-hide="hasMessages()">No messages to show.</div>
+</div>

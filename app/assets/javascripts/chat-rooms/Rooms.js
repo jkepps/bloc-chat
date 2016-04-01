@@ -10,17 +10,17 @@
 			});
 		};
 
+		Rooms.get = function(id) {
+			return $http.get('/chat_rooms/' + id + '.json').then(function(res) {
+				return res.data;
+			});
+		};
+
 		Rooms.create = function(chatRoom) {
 			return $http.post('/chat_rooms.json', chatRoom).success(function(data) {
 				Rooms.rooms.push(data.chat_room);
 			});
 		};
-
-		// Rooms.get = function(id) {
-		// 	return $http.get('/chat_rooms/' + id + '.json').then(function(res) {
-		// 		return res.data;
-		// 	});
-		// };
 
 		return Rooms;
 	}

@@ -1,13 +1,13 @@
 (function() {
-	function ModalCtrl($scope, $uibModal, Rooms) {
+	function NewRoomModalCtrl($scope, $uibModal, Rooms) {
 
 		$scope.animationsEnabled = true;
 
 		this.open = function(size) {
 			var modalInstance = $uibModal.open({
 				animation: $scope.animationsEnabled,
-				templateUrl: 'chat-rooms/_modal.html',
-				controller: 'ModalInstanceCtrl as modalInst',
+				templateUrl: 'room-nav/_new_room_modal.html',
+				controller: 'NewRoomModalInstanceCtrl as modalInst',
 				size: size,
 				resolve: {
 					newRoom: function() {
@@ -22,7 +22,7 @@
 		};
 	}
 
-	function ModalInstanceCtrl($scope, $uibModalInstance) {
+	function NewRoomModalInstanceCtrl($scope, $uibModalInstance) {
 		this.ok = function() {
 			if(!$scope.name || $scope.name === '') { return; }
 			$uibModalInstance.close({name: $scope.name, user: $scope.user});
@@ -35,7 +35,7 @@
 
 	angular
 		.module('blocChat')
-		.controller('ModalCtrl', ['$scope', '$uibModal', 'Rooms', ModalCtrl])
-		.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', ModalInstanceCtrl])
+		.controller('NewRoomModalCtrl', ['$scope', '$uibModal', 'Rooms', NewRoomModalCtrl])
+		.controller('NewRoomModalInstanceCtrl', ['$scope', '$uibModalInstance', NewRoomModalInstanceCtrl])
 
 })();
