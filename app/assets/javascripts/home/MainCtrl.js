@@ -1,10 +1,14 @@
 (function() {
 	function MainCtrl($scope, Rooms) {
 		this.rooms = Rooms.rooms;
-		// this.room = room;
-		$scope.$watch('rooms', function(n, o) {
-			console.log(n,o);
-		})
+		this.selectedRoom = this.rooms[0];
+		this.selectedRoom.isActive = true;
+
+		this.selectRoom = function(room) {
+			this.selectedRoom.isActive = false;
+			this.selectedRoom = room;
+			this.selectedRoom.isActive = true;
+		};
 
 		this.addRoom = function() {
 			if(!$scope.name || $scope.name === '') { return; }

@@ -3,11 +3,26 @@
 		<h1><i class="icon ion-chatboxes"></i> Bloc Chat</h1>
 		<div ng-repeat="room in main.rooms" 
 				class="chat-room-list-item"
-				ng-click="#">
+				ng-class="{open: room.isActive}"
+				ng-click="main.selectRoom(room)">
 			<h5><i class="icon ion-pound"></i> {{ room.name }}</h5>
 		</div>
 		<div class="chat-room-list-item"
 				ng-controller="ModalCtrl as modal"
-				ng-click="modal.open()"><i class="icon ion-plus-round"></i> New Chat Room</div>
+				ng-click="modal.open()">
+			<i class="icon ion-plus-round"></i> New Chat Room
+		</div>
+	</div>
+</div>
+<div class="messages-container">
+	<h1><i class="icon ion-pound"></i> {{ main.selectedRoom.name }}</h1>
+	<div class="message-list">
+		<div ng-show="main.selectedRoom.messages"
+				ng-repeat="message in main.selectedRoom.messages"
+				class="message">
+			<p class="message-author">{{ message.author }}</p>
+			<p class="message-body">{{ message.body }}</p>
+		</div>
+		<div ng-hide="main.selectedRoom.messages.size === 0" class="message">No messages to show.</div>
 	</div>
 </div>

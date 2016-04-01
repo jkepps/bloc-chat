@@ -45,11 +45,11 @@ body {
 .chat-list-container {
 	position: absolute;
 	height: 100%;
-	/*border-right: 2px solid #000;*/
+	border-right: 4px solid #bbb;
 	left: 0;
 	width: $chat-room-list-width;
-	background-color: #242424;
-	color: #f4f4f4;
+	background-color: #f4f4f4;
+	color: #242424;
 	overflow: scroll;
 }
 
@@ -61,22 +61,27 @@ body {
 }
 
 .chat-list-container .chat-room-list .chat-room-list-item {
-	border-top: 1px solid white;
+	border-top: 1px solid #555;
 	padding: 20px 20px;
 	margin: 0;
 }
 
 .chat-list-container .chat-room-list .chat-room-list-item:hover {
-	background-color: $text-color;
-	color: $background-color;
+	background-color: $background-color;
+	color: $text-color;
 	cursor: pointer;
+}
+
+.chat-list-container .chat-room-list .chat-room-list-item.open {
+	background-color: $background-color;
+	color: $text-color;
 }
 
 .chat-list-container .chat-room-list .chat-room-list-item h5 {
 	font-size: 1.4rem;
 	padding: 0;
 	margin: 0;
-	font-weight: 300;
+	font-weight: 600;
 	letter-spacing: 1px;
 	line-height: 1.5em;
 }
@@ -89,4 +94,27 @@ body {
 
 .chat-list-container .chat-room-list .chat-room-list-item .icon.ion-ios-plus-outline {
 	font-size: 1.75rem;
+}
+
+.messages-container {
+	position: absolute;
+	height: 100%;
+	left: $chat-room-list-width;
+	overflow: scroll;
+	width: 100% - $chat-room-list-width;
+}
+
+.messages-container h1 {
+	padding: 20px 0 20px 10px;
+	font-weight: 600;
+}
+
+.messages-container .message-list .message {
+	text-align: right;
+	border-top: 1px solid black;
+	padding: 40px 40px 40px 0;
+}
+
+.messages-container .message-list .message .message-author {
+	font-weight: 700;
 }
