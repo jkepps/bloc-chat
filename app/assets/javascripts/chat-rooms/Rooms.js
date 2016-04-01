@@ -11,9 +11,8 @@
 		};
 
 		Rooms.create = function(chatRoom) {
-			console.log('you entered create');
 			return $http.post('/chat_rooms.json', chatRoom).success(function(data) {
-				Rooms.rooms.push(data);
+				Rooms.rooms.push(data.chat_room);
 			});
 		};
 
