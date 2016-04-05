@@ -8,10 +8,12 @@
 
 		this.sendMessage = function() {
 			if($scope.body === '') { return; }
-			Message.send(this.room.id, {
+			var newMessage = {
 				body: $scope.body,
 				author: $cookies.get('blocChatCurrentUser')
-			});
+			};
+			Message.send(this.room.id, newMessage);
+			this.room.messages.push(newMessage);
 			$scope.body='';
 		};
 	}
