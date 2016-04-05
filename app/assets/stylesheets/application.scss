@@ -109,6 +109,11 @@ body {
 	font-weight: 600;
 }
 
+.messages-container .message-list {
+	max-height: 75%;
+	overflow: scroll;
+}
+
 .messages-container .message-list .message {
 	text-align: right;
 	border-top: 1px solid black;
@@ -117,4 +122,10 @@ body {
 
 .messages-container .message-list .message .message-author {
 	font-weight: 700;
+}
+
+.messages-container .message-form {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }

@@ -10,4 +10,16 @@
 		</div>
 	</div>
 	<div ng-hide="hasMessages()">No messages to show.</div>
+	<div class="message-form">	
+		<form ng-submit="rooms.sendMessage()">
+			<div class="form-group">
+				<input type="text"
+							class="form-control"
+							placeholder="Write your message here..."
+							ng-model="body"
+							required="true"></input>
+			</div>
+			<button type="submit">Send</button>
+		</form>
+	</div>
 </div>
