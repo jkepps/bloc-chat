@@ -22,20 +22,22 @@
 		};
 	}
 
-	function NewRoomModalInstanceCtrl($scope, $uibModalInstance) {
+	function NewRoomModalInstanceCtrl($scope, $cookies, $uibModalInstance) {
+		$scope.currentUser = $cookies.get('blocChatCurrentUser');
+
 		this.ok = function() {
 			if(!$scope.name || $scope.name === '') { return; }
-			$uibModalInstance.close({name: $scope.name, user: $scope.user});
+			$uibModalInstance.close({name: $scope.name, created_by: $scope.currentUser});
 		};
 
 		this.cancel = function() {
 			$uibModalInstance.dismiss('cancel');
-		}
+		};
 	}
 
 	angular
 		.module('blocChat')
 		.controller('NewRoomModalCtrl', ['$scope', '$uibModal', 'Rooms', NewRoomModalCtrl])
-		.controller('NewRoomModalInstanceCtrl', ['$scope', '$uibModalInstance', NewRoomModalInstanceCtrl])
+		.controller('NewRoomModalInstanceCtrl', ['$scope', '$cookies', '$uibModalInstance', NewRoomModalInstanceCtrl]);
 
 })();

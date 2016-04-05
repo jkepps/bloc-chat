@@ -33,6 +33,6 @@
 
 
 	angular
-		.module('blocChat', ['ui.router', 'templates', 'ngAnimate', 'ui.bootstrap'])
+		.module('blocChat', ['ui.router', 'templates', 'ngAnimate', 'ui.bootstrap', 'ngCookies'])
 		.config(config);
 })();

@@ -11,15 +11,9 @@
 						ng-model="name"></input>
 		</div>
 
-		<div class="form-group">
-			<input type="text"
-						class="form-control"
-						placeholder="Created By"
-						ng-model="user"></input>
-		</div>
 	</form>
 	<p>Name: {{ name }}</p>
-	<p>Created By: {{ user }}</p>
+	<p>Created By: {{ currentUser }}</p>
 </div>
 <div class="modal-footer">
 	<button class="btn btn-primary" 
