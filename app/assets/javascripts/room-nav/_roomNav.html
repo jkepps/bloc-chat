@@ -3,7 +3,7 @@
 		<h1><i class="icon ion-chatboxes"></i> Bloc Chat</h1>
 		<div ng-repeat="room in roomNav.rooms" 
 				class="chat-room-list-item">
-			<h5><a href="/chat-rooms/{{room.id}}"><i class="icon ion-pound"></i> {{ room.name }}</a></h5>
+			<a href="/chat-rooms/{{room.id}}"><i class="icon ion-pound"></i> {{ room.name }}</a>
 		</div>
 		<div class="chat-room-list-item"
 				ng-controller="NewRoomModalCtrl as modal"

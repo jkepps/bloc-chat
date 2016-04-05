@@ -1,5 +1,5 @@
 (function() {
-	function NewRoomModalCtrl($scope, $uibModal, Rooms) {
+	function NewRoomModalCtrl($scope, $uibModal, Rooms, $location) {
 
 		$scope.animationsEnabled = true;
 
@@ -37,7 +37,7 @@
 
 	angular
 		.module('blocChat')
-		.controller('NewRoomModalCtrl', ['$scope', '$uibModal', 'Rooms', NewRoomModalCtrl])
+		.controller('NewRoomModalCtrl', ['$scope', '$uibModal', 'Rooms', '$location', NewRoomModalCtrl])
 		.controller('NewRoomModalInstanceCtrl', ['$scope', '$cookies', '$uibModalInstance', NewRoomModalInstanceCtrl]);
 
 })();

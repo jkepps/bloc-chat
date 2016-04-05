@@ -28,7 +28,10 @@
 				}
 			});
 			
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider
+			.when('/?goto=chat-rooms%2F1', ['$stateParams', function($stateParams) {
+				$location.path('/chat-rooms/' + $stateParams.id);
+			}]);
 	}
 
 

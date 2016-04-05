@@ -2,8 +2,8 @@
 	function Message($http) {
 		var Message = {};
 
-		Message.send = function(chat_room_id, newMessage) {
-			return $http.post('/chat_rooms/' + chat_room_id + '/messages.json', newMessage).then(function(res) {
+		Message.send = function(chatRoomId, newMessage) {
+			return $http.post('/chat_rooms/' + chatRoomId + '/messages.json', newMessage).then(function(res) {
 				return res.data;
 			});
 		};

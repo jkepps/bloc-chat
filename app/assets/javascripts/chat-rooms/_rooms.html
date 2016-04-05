@@ -1,7 +1,7 @@
 <div class="messages-container">
 	<h1><i class="icon ion-pound"></i> {{ rooms.room.name }}</h1>
 	<p>Created by: <b>{{ rooms.room.created_by}}</b></p>
-	<div class="message-list" ng-show="hasMessages()">
+	<div class="message-list" ng-show="hasMessages()" id="autoscroll">
 		<div ng-repeat="message in rooms.room.messages"
 				class="message">
 			<small>{{ message.created_at | date:'short'}}</small>
@@ -12,14 +12,14 @@
 	<div ng-hide="hasMessages()">No messages to show.</div>
 	<div class="message-form">	
 		<form ng-submit="rooms.sendMessage()">
-			<div class="form-group">
+			<div class="form-group message-input-box">
 				<input type="text"
 							class="form-control"
 							placeholder="Write your message here..."
 							ng-model="body"
 							required="true"></input>
 			</div>
-			<button type="submit">Send</button>
+			<button type="submit" class="message-send-button">Send</button>
 		</form>
 	</div>
 </div>
