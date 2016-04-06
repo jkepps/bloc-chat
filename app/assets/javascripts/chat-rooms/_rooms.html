@@ -12,7 +12,13 @@
 			<p class="message-body">{{ message.body }}</p>
 		</div>
 	</div>
-	<div ng-hide="hasMessages()">No messages to show.</div>
+	<div class="no-messages" 
+			ng-hide="hasMessages()">
+		<h3>
+			Everyone's so quiet in here...<br>
+			Why don't you say something?
+		</h3>
+	</div>
 	<div class="message-form">	
 		<form ng-submit="rooms.sendMessage()">
 			<div class="form-group message-input-box">
