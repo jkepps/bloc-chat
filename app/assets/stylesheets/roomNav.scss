@@ -1,0 +1,68 @@
+@import 'variables';
+
+.chat-list-container {
+	position: absolute;
+	height: 100%;
+	/*border-right: 4px solid #ccc;*/
+	box-shadow: 3px 3px 3px #ccc;
+	left: 0;
+	width: $chat-room-list-width;
+	background-color: $primary-color;
+	color: #242424;
+	overflow: scroll;
+
+	.chat-room-list {
+		color: #fff;
+
+		h1 {
+			padding-left: 20px;
+			margin: 40px 0;
+			font-size: 3rem;
+			font-weight: 400;
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+
+		.chat-room-list-item {
+			border-top: 1px solid #ccc;
+			padding: 20px 20px;
+			margin: 0;
+			color: #fff;
+
+			a {
+				font-size: 1.4rem;
+				padding: 0;
+				margin: 0;
+				font-weight: 600;
+				letter-spacing: 1px;
+				line-height: 1.5em;
+				color: inherit;
+				text-decoration: none;
+			}
+			
+			small {
+				font-size: 1rem;
+				font-weight: 300;
+				letter-spacing: 1px;
+			}
+
+			.icon.ion-ios-plus-outline {
+				font-size: 1.75rem;
+			}
+		}
+
+		.chat-room-list-item:hover {
+			background-color: #fff;
+			color: $primary-color;
+			cursor: pointer;
+		}
+
+		.chat-room-list-item.open {
+			background-color: $background-color;
+			color: $text-color;
+		}
+	}
+}

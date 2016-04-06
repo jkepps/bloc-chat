@@ -1,0 +1,11 @@
+@import 'variables';
+
+.home-default {
+	padding: 30vh 0;
+	text-align: center;
+
+	.icon {
+		font-size: 7rem;
+		color: $primary-color;
+	}
+}

@@ -16,11 +16,8 @@
  *= require_self
  */
 
- @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300);
-
- $chat-room-list-width: 20%;
- $text-color: #f4f4f4;
- $background-color: #242424;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300);
+@import 'variables';
 
 *, *:before, *:after {
 	-moz-box-sizing: border-box;
@@ -41,133 +38,27 @@ body {
 	margin: 0;
 }
 
-
-.chat-list-container {
-	position: absolute;
-	height: 100%;
-	border-right: 4px solid #bbb;
-	left: 0;
-	width: $chat-room-list-width;
-	background-color: #f4f4f4;
-	color: #242424;
-	overflow: scroll;
-
-	.chat-room-list {
-		h1 {
-			padding-left: 20px;
-			margin: 40px 0;
-			font-size: 3rem;
-			font-weight: 400;
-		}
-
-		.chat-room-list-item {
-			border-top: 1px solid #555;
-			padding: 20px 20px;
-			margin: 0;
-
-			a {
-				font-size: 1.4rem;
-				padding: 0;
-				margin: 0;
-				font-weight: 600;
-				letter-spacing: 1px;
-				line-height: 1.5em;
-				color: #4D95D9;
-			}
-			
-			a:hover, 
-			a:active, 
-			a:visited, 
-			a:focus {
-				text-decoration: none;
-			}
-
-			small {
-				font-size: 1rem;
-				font-weight: 300;
-				letter-spacing: 1px;
-			}
-
-			.icon.ion-ios-plus-outline {
-				font-size: 1.75rem;
-			}
-		}
-
-		.chat-room-list-item:hover {
-			background-color: $background-color;
-			color: $text-color;
-			cursor: pointer;
-		}
-
-		.chat-room-list-item.open {
-			background-color: $background-color;
-			color: $text-color;
-		}
-	}
+.btn.btn-primary,
+.btn.btn-primary:active,
+.btn.btn-primary:focus {
+	background: $primary-color;
+	border-color: $primary-color;
 }
 
-.messages-container {
-	position: absolute;
-	height: 100%;
-	left: $chat-room-list-width;
-	overflow: scroll;
-	width: 100% - $chat-room-list-width;
+.btn.btn-primary:hover {
+	border-color: rgba(88,193,102,0.75);
+	background-color: rgba(88,193,102,0.75);
+}
 
-	h1 {
-		padding: 20px 0 20px 10px;
-		font-weight: 600;
-	}
+.btn.btn-warning,
+.btn.btn-warning:active,
+.btn.btn-warning:focus {
+	background: #fff;
+	border-color: $primary-color;
+	color: $primary-color;
+}
 
-	.message-list {
-		max-height: 80%;
-		overflow: scroll;
-
-		.message {
-			text-align: right;
-			border-top: 1px solid black;
-			padding: 40px 40px 40px 0;
-
-			.message-author {
-				font-weight: 700;
-			}
-		}
-	}
-
-	.message-form {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		padding-bottom: 5px;
-
-		.message-input-box {
-			display: block;
-			float: left;
-			width: 86%;
-			margin: 0;
-
-			input {
-				width: 100%;
-				margin: 0;
-				padding: 29px 15px;
-				border-radius: 0;
-			}		
-		}
-
-		.message-send-button {
-			width: 14%;
-			display: block;
-			float: left;
-			margin: 0;
-			padding: 20px 10px;
-			border: none;
-			background-color: #C6C1F2;
-			transition: background-color 0.25s ease;
-			text-transform: uppercase;
-			font-weight: 600;
-		}
-
-		.message-send-button:hover {
-			background-color: rgba(198,193,242,0.5);
-		}
-	}
+.btn.btn-warning:hover {
+	color: rgba(88,193,102,0.75);
+	border-color: rgba(88,193,102,0.75); 
 }

@@ -29,9 +29,18 @@
 			});
 			
 		$urlRouterProvider
-			.when('/?goto=chat-rooms%2F1', ['$stateParams', function($stateParams) {
+			.when('/?goto=chat-rooms%2F2', ['$stateParams', function($stateParams, $location) {
 				$location.path('/chat-rooms/' + $stateParams.id);
-			}]);
+				$location.go('/chat-rooms/' + $stateParams.id)
+				return '/chat-rooms/' + $stateParams.id;
+			}])
+			.rule(function($injector, $location) {
+				var path = $location.path();
+				console.log(path);
+				if(path === '/?goto=chat-rooms%2F2') {
+					return '/chat-rooms/2';
+				}
+			});
 	}
 
 

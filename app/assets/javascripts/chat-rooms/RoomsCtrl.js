@@ -1,5 +1,5 @@
 (function() {
-	function RoomsCtrl($scope, $cookies, room, Message, $timeout) {
+	function RoomsCtrl($scope, $location, $cookies, room, Message, $timeout) {
 		$timeout(function () {
 				var scroller = document.getElementById("autoscroll");
 				scroller.scrollTop = scroller.scrollHeight;
@@ -26,9 +26,13 @@
 				scroller.scrollTop = scroller.scrollHeight;
 			}, 0, false);
 		};
+
+		this.close = function() {
+			$location.path('/');
+		};
 	}
 
 	angular
 		.module('blocChat')
-		.controller('RoomsCtrl', ['$scope', '$cookies', 'room', 'Message', '$timeout', RoomsCtrl]);
+		.controller('RoomsCtrl', ['$scope', '$location', '$cookies', 'room', 'Message', '$timeout', RoomsCtrl]);
 })();

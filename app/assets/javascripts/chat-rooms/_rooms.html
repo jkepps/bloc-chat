@@ -1,6 +1,9 @@
 <div class="messages-container">
-	<h1><i class="icon ion-pound"></i> {{ rooms.room.name }}</h1>
-	<p>Created by: <b>{{ rooms.room.created_by}}</b></p>
+	<div class="messages-container-header">
+		<h1><i class="icon ion-pound"></i> {{ rooms.room.name }}</h1>
+		<p>Created by: <b>{{ rooms.room.created_by}}</b></p>
+		<i class="icon ion-ios-close-empty" ng-click="rooms.close()"></i>
+	</div>
 	<div class="message-list" ng-show="hasMessages()" id="autoscroll">
 		<div ng-repeat="message in rooms.room.messages"
 				class="message">
