@@ -5,6 +5,7 @@ Deployed on heroku [here](http://bloc-chat-jepps.herokuapp.com/)
 ##### A real-time messaging app that allows users to create chat rooms and send messages.
 
 Rails v4.2.5
+
 AngularJS v1.5.5
 
 ### Important Gems
